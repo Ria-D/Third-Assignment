@@ -7,3 +7,15 @@ Provide examples to showcase that the functions works.
 
 Weight: 1
 '''
+import numpy as np
+
+input1 = np.array([1,2,3,4,5,6])
+input2 = (1,5)
+
+def rangeArray(myArray, myTup):
+    a = myTup[0]-1 
+    b = myTup[1]
+    
+    return myArray[a:b]
+
+print(rangeArray(input1, input2))
