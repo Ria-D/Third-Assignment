@@ -9,3 +9,35 @@ You will end up with 1000 data points that you need to write in another text fil
 
 Weight: 2
 '''
+
+import os
+os.chdir("Data")
+
+
+newlist = []
+with open("Data points.txt", "r") as file:
+    
+
+    for line in file:
+        if "-" in line:
+            continue
+        
+        else:
+            data = line.split('    ')
+        
+        
+
+            sumline = 0
+            for number in data:
+                sumline += float(number)
+            
+            averagenumber = (sumline/2)
+        
+            newlist.append(averagenumber)
+        
+
+f = open("Data points average.txt", "w")
+for i in newlist:
+    f.write(f" {str(i)} \n")        
+        
+f.close()
