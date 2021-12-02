@@ -29,3 +29,20 @@ Don't use the function np.pad() of Numpy or equivalent functions to solve this e
 
 Weight: 2
 '''
+import numpy as np
+
+matrix1 = np.array([[5,1], [7,1]])
+integer1 = 2
+
+matrix2 = np.array([[3,4,6], [8,5,2], [9,8,5]])
+integer2 = 1
+
+def matrixPadding(thisMatrix, thisInteger):
+    rows, columns = thisMatrix.shape
+    result = np.zeros((rows +thisInteger*2, columns + thisInteger*2))
+    result[thisInteger:thisInteger+rows,thisInteger:thisInteger+columns] = thisMatrix
+   
+    return result
+
+print(matrixPadding(matrix1, integer1))
+print(matrixPadding(matrix2, integer2))
