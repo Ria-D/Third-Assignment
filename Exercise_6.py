@@ -10,3 +10,22 @@ In the constructor argument, transform the tuple that you get as an input into a
 
 Weight: 1
 '''
+import numpy as np
+
+
+class Vehicle:
+    def __init__(self, type: str, velocity: tuple, colour:str, electric:bool):
+
+        if type != "Car" and type != "Truck":
+            print("Vehicle type must be a Car or Truck")
+
+        self.type = type
+        self.velocity = np.array(velocity)
+        self.colour = colour
+        self.electric = electric
+
+vehicle1 = Vehicle("bike", (3,4), "blue", False)   
+
+    
+
+
